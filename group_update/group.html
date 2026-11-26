@@ -23,16 +23,16 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Description</label>
-                    <input type="text" class="form-control" v-model="group.description"
+                    <input id="group-edit-description" type="text" class="form-control" v-model="group.description"
                            placeholder="Human-readable summary">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Metadata (JSON, optional)</label>
-                    <textarea class="form-control" v-model="group.metadata" rows="4"
+                    <textarea id="group-edit-metadata" class="form-control" v-model="group.metadata" rows="4"
                               style="font-family: monospace;"
                               placeholder='{"key":"value"}'></textarea>
                 </div>
-                <button type="button" class="btn btn-primary" @click="saveGroup()" :disabled="saving">
+                <button id="btn-save-group" type="button" class="btn btn-primary" @click="saveGroup()" :disabled="saving">
                     <span v-if="saving" class="spinner-border spinner-border-sm me-1"></span>
                     Save Changes
                 </button>

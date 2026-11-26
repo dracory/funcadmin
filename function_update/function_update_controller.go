@@ -202,6 +202,7 @@ func (u *ui) renderSourceView(r *http.Request, fn funcstore.FunctionInterface) h
 		Class("mb-3").
 		Child(bs.FormLabel("Source Code (JavaScript)")).
 		Child(hb.Textarea().
+			ID("function-source").
 			Class("form-control").
 			Name("source").
 			Attr("rows", "20").
@@ -209,6 +210,7 @@ func (u *ui) renderSourceView(r *http.Request, fn funcstore.FunctionInterface) h
 			Text(fn.GetSource()))
 
 	buttonSave := hb.Button().
+		ID("btn-save-source").
 		Class("btn btn-primary").
 		Child(hb.I().Class("bi bi-check me-2")).
 		HTML("Save Source").

@@ -3,16 +3,20 @@ module github.com/dracory/funcadmin
 go 1.27.0
 
 require (
+	github.com/chromedp/chromedp v0.14.2
 	github.com/dracory/api v1.8.0
 	github.com/dracory/bs v0.17.0
 	github.com/dracory/cdn v1.13.0
 	github.com/dracory/funcstore v0.1.0
 	github.com/dracory/hb v1.88.0
 	github.com/dracory/req v0.1.0
+	modernc.org/sqlite v1.63.0
 )
 
 require (
 	github.com/a-h/templ v0.3.1118 // indirect
+	github.com/chromedp/cdproto v0.0.0-20250724212937-08a3db8b4327 // indirect
+	github.com/chromedp/sysutil v1.1.0 // indirect
 	github.com/dlclark/regexp2 v1.12.0 // indirect
 	github.com/dlclark/regexp2/v2 v2.13.2 // indirect
 	github.com/dop251/goja v0.0.0-20261125210501-5e92a7e24d0c // indirect
@@ -20,7 +24,11 @@ require (
 	github.com/dracory/neat v0.62.2 // indirect
 	github.com/dustin/go-humanize v1.1.0 // indirect
 	github.com/go-bridget/mig v0.7.0 // indirect
+	github.com/go-json-experiment/json v0.0.0-20250725192818-e39067aee2d2 // indirect
 	github.com/go-sourcemap/sourcemap v2.1.4+incompatible // indirect
+	github.com/gobwas/httphead v0.1.0 // indirect
+	github.com/gobwas/pool v0.2.1 // indirect
+	github.com/gobwas/ws v1.4.0 // indirect
 	github.com/goccy/go-yaml v1.19.2 // indirect
 	github.com/gofrs/uuid v4.4.0+incompatible // indirect
 	github.com/google/pprof v0.0.0-20261118010117-084b33a85f63 // indirect
@@ -45,5 +53,4 @@ require (
 	modernc.org/libc v1.82.14 // indirect
 	modernc.org/mathutil v1.7.1 // indirect
 	modernc.org/memory v1.13.1 // indirect
-	modernc.org/sqlite v1.63.0 // indirect
 )
