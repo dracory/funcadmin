@@ -1,0 +1,57 @@
+<div id="invokeApp" class="mt-3">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Input</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Input (JSON)</label>
+                        <textarea class="form-control" v-model="inputText" rows="12"
+                                  style="font-family: monospace; font-size: 14px;"
+                                  placeholder='{"key": "value"} or "string" or 42 or [1,2,3]'></textarea>
+                        <div class="form-text">Enter JSON to pass as the <code>input</code> binding.</div>
+                    </div>
+                    <button class="btn btn-success" @click="runInvoke" :disabled="invoking">
+                        <span v-if="invoking" class="spinner-border spinner-border-sm me-2"></span>
+                        <i v-else class="bi bi-play me-2"></i>
+                        Run
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Output</h5>
+                </div>
+                <div class="card-body">
+                    <div v-if="error" class="alert alert-danger">
+                        <strong>Error:</strong> {{ error }}
+                    </div>
+                    <div v-if="result !== null && !error">
+                        <div class="alert alert-success mb-3">
+                            <i class="bi bi-check-circle me-2"></i>Execution successful
+                        </div>
+                        <label class="form-label">Result</label>
+                        <pre class="bg-light p-3 rounded" style="font-size: 14px; max-height: 400px; overflow: auto;"><code>{{ resultText }}</code></pre>
+                    </div>
+                    <div v-if="result === null && !error && !invoking" class="text-muted text-center py-4">
+                        <i class="bi bi-arrow-left fs-1 d-block mb-2"></i>
+                        <p>Click "Run" to execute the function.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-header">
+            <h5 class="mb-0">Source Preview</h5>
+        </div>
+        <div class="card-body">
+            <pre class="bg-light p-3 rounded" style="font-size: 14px; max-height: 300px; overflow: auto;"><code>{{ functionSource }}</code></pre>
+        </div>
+    </div>
+</div>

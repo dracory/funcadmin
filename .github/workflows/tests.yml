@@ -1,0 +1,43 @@
+# This workflow will build a golang project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+#
+# funcadmin's go.mod contains `replace github.com/dracory/funcstore => ../funcstore`,
+# so the funcstore repository is checked out as a sibling directory to satisfy it.
+
+name: tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: funcadmin
+    steps:
+    - name: Checkout funcadmin
+      uses: actions/checkout@v4
+      with:
+        path: funcadmin
+
+    - name: Checkout funcstore (sibling for go.mod replace)
+      uses: actions/checkout@v4
+      with:
+        repository: dracory/funcstore
+        path: funcstore
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.27'
+
+    - name: Build
+      run: go build -v ./...
+
+    - name: Test
+      run: go test -v ./...
