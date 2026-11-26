@@ -47,7 +47,3 @@ require (
 	modernc.org/memory v1.13.1 // indirect
 	modernc.org/sqlite v1.63.0 // indirect
 )
-
-// Local development: use the sibling funcstore module until it is tagged.
-// Remove this replace once github.com/dracory/funcstore has a release.
-replace github.com/dracory/funcstore => ../funcstore
